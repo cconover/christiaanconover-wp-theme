@@ -610,7 +610,8 @@ a:active {
 --------------------------------------------------------------*/
 body {
 	position: absolute;
-	top: 6.5em;
+	top: 100px;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -623,8 +624,7 @@ body {
 	right: 0;
 	padding: 0.5em;
 	background: #f3f3f3;
-	box-shadow: 0 2px 2px #AAAAAA;
-	z-index: 9999;
+	z-index: 45;
 	font-family: 'Roboto', sans-serif;
 	line-height: 1;
 }
@@ -672,6 +672,10 @@ body {
 /*--------------------------------------------------------------
 10.3 Site Content
 --------------------------------------------------------------*/
+.site-content {
+	max-width: 100%;
+}
+
 .site-main {
 	display: block;
 	width: 90%;
@@ -690,7 +694,8 @@ body {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	max-width: 40em;
+	margin: 0 auto 1.5em;
 }
 
 .entry-title {
@@ -838,7 +843,28 @@ video {
 }
 
 /*--------------------------------------------------------------
-14.0 Media Queries
+14.0 Scripts
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+14.1 Headroom.js
+--------------------------------------------------------------*/
+.headroom {
+	transition: transform 200ms linear;
+	box-shadow: 0 2px 2px #AAAAAA;
+}
+.headroom--pinned {
+	transform: translateY(0%);
+}
+.headroom--unpinned {
+	transform: translateY(-100%);
+}
+
+.headroom--unpinned {
+	box-shadow: none;
+}
+
+/*--------------------------------------------------------------
+15.0 Media Queries
 --------------------------------------------------------------*/
 /* Viewports ~660px and larger */
 @media all and (min-width: 41.25em) {

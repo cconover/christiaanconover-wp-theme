@@ -8,13 +8,21 @@ Different sizes depending on the viewport
 }
 
 body,
-#masthead {
+.site-header {
 	margin-top: 32px;
+}
+
+.headroom--unpinned {
+	transform: translateY(-200%);
 }
 
 @media all and (max-width: 782px) {
 	body,
-	#masthead {
+	.site-header {
 		margin-top: 46px;
+	}
+	
+	.headroom--unpinned {
+		transform: translateY(-150%);
 	}
 }
