@@ -1,0 +1,5 @@
+{
+	"require": {
+		"tgm/plugin-activation": ">=2.4.0"
+	}
+}

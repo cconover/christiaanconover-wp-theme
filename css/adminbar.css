@@ -1,0 +1,20 @@
+/*
+Accomodations for the admin bar
+Different sizes depending on the viewport
+*/
+
+#wpadminbar {
+	position: fixed;
+}
+
+body,
+#masthead {
+	margin-top: 32px;
+}
+
+@media all and (max-width: 782px) {
+	body,
+	#masthead {
+		margin-top: 46px;
+	}
+}
