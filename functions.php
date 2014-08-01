@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 960; /* pixels */
 }
 
 if ( ! function_exists( 'christiaanconover_setup' ) ) :
@@ -117,7 +117,7 @@ function christiaanconover_scripts() {
 	wp_enqueue_style( 'christiaanconover-font-melbourne', get_template_directory_uri() . '/font/melbourne/melbourne.css' );
 	
 	// Google Fonts
-	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Condensed' );
+	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed' );
 	
 	// Font Awesome
 	wp_enqueue_style( 'christiaanconover-fontawesome', get_template_directory_uri() . '/font/fontawesome/css/font-awesome.min.css' );
@@ -151,16 +151,7 @@ function christiaanconover_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	 $plugins = array(
-	 	// Site Logo (GitHub repo as source)
-	 	array(
-		 	'name'					=> 'Site Logo', // Name of the plugin
-		 	'slug'					=> 'site-logo-master', // Slug for the plugin
-		 	'source'				=> 'https://github.com/Automattic/site-logo/archive/master.zip', // Source from where the plugin should be retrieved
-		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
-		 ),
-		 
-		 // Author Customization
+	 	 // Author Customization
 		 array(
 		 	'name'					=> 'Author Customization', // Name of the plugin
 		 	'slug'					=> 'author-customization', // Slug for the plugin
@@ -188,6 +179,15 @@ function christiaanconover_register_required_plugins() {
 		 array(
 		 	'name'					=> 'Liveblog', // Name of the plugin
 		 	'slug'					=> 'liveblog', // Slug for the plugin
+		 	'required'				=> true, // Plugin is required for the theme to be active
+		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 ),
+		 
+		 // Site Logo (GitHub repo as source)
+		 array(
+		 	'name'					=> 'Site Logo', // Name of the plugin
+		 	'slug'					=> 'site-logo-master', // Slug for the plugin
+		 	'source'				=> 'https://github.com/Automattic/site-logo/archive/master.zip', // Source from where the plugin should be retrieved
 		 	'required'				=> true, // Plugin is required for the theme to be active
 		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
 		 ),
