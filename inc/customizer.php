@@ -82,7 +82,7 @@ function christiaanconover_customize_register( $wp_customize ) {
 	// Main menu color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_menu_color', array(
 		'label'			=> __( 'Main Menu Color', 'christiaanconover' ),
-		'section'		=> 'nav',
+		'section'		=> 'colors',
 		'settings'		=> 'main_menu_color'
 	) ) );
 	
