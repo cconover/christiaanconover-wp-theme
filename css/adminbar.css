@@ -13,16 +13,12 @@ body,
 }
 
 .headroom--unpinned {
-	transform: translateY(-200%);
+	transform: translateY(-150%);
 }
 
 @media all and (max-width: 782px) {
 	body,
 	.site-header {
 		margin-top: 46px;
-	}
-	
-	.headroom--unpinned {
-		transform: translateY(-150%);
 	}
 }

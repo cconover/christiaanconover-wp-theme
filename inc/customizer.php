@@ -23,7 +23,7 @@ function christiaanconover_customize_register( $wp_customize ) {
 	) );
 	// Header background color
 	$wp_customize->add_setting( 'header_bgcolor', array(
-		'default'		=> '#F3F3F3',
+		'default'		=> '#ffffff',
 		'transport'		=> 'postMessage'
 	) );
 	
