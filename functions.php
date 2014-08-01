@@ -63,7 +63,7 @@ function christiaanconover_setup() {
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'christiaanconover_custom_background_args', array(
-		'default-color' => 'f2f2f2',
+		'default-color' => 'fcfcfc',
 		'default-image' => '',
 	) ) );
 	

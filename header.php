@@ -34,6 +34,4 @@
 		<div class="site-social">
 			SOCIAL LINKS HERE
 		</div><!-- .site-social -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+	</header><!-- #masthead --><div id="content" class="site-content">

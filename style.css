@@ -152,7 +152,6 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -436,14 +435,7 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
 	text-decoration: none;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
 }
 
 /*--------------------------------------------------------------
@@ -623,7 +615,6 @@ body {
 	left: 0;
 	right: 0;
 	padding: 0.5em;
-	background: #f3f3f3;
 	z-index: 45;
 	font-family: 'Roboto', sans-serif;
 	line-height: 1;
@@ -657,7 +648,6 @@ body {
 
 
 .site-title a {
-	color: #303030;
 	padding: 1em 0;
 }
 
@@ -673,13 +663,9 @@ body {
 10.3 Site Content
 --------------------------------------------------------------*/
 .site-content {
-	max-width: 100%;
-}
-
-.site-main {
 	display: block;
 	width: 90%;
-	max-width: 64em;
+	max-width: 40em;
 	margin: 0 auto;
 }
 
@@ -850,7 +836,6 @@ video {
 --------------------------------------------------------------*/
 .headroom {
 	transition: transform 200ms linear;
-	box-shadow: 0 2px 2px #AAAAAA;
 }
 .headroom--pinned {
 	transform: translateY(0%);
@@ -859,6 +844,9 @@ video {
 	transform: translateY(-100%);
 }
 
+.site-header.headroom {
+	box-shadow: 0 2px 2px #AAAAAA;
+}
 .headroom--unpinned {
 	box-shadow: none;
 }
