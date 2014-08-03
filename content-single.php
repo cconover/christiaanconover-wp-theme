@@ -5,13 +5,38 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php christiaanconover_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="post-featured-image" style="background-image: url( '<?php echo christiaanconover_featured_image_url(); ?>' );">
+			<div class="entry-header-container">
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		
+					<div class="entry-meta">
+						<?php christiaanconover_posted_on(); ?>
+					</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+			</div><!-- .entry-header-container -->
+		</div><!-- .post-featured-image -->
+		
+		<?php
+		// Get featured image caption
+		$postimage_caption = cc_featured_image_caption();
+		
+		// If a caption is set, display it
+		if ( ! false == $postimage_caption ) : ?>
+			<div class="featured-image-caption">
+				<?php echo $postimage_caption; ?>
+			</div><!-- .featured-image-caption -->
+		<?php endif; ?>
+	<?php else : ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		
+			<div class="entry-meta">
+				<?php christiaanconover_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

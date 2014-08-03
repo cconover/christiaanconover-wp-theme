@@ -36,7 +36,7 @@
 	} );
 	
 	// Body text color.
-	wp.customize( 'body_textcolor', function( value ) {
+	wp.customize( 'text_color', function( value ) {
 		value.bind( function( newval ) {
 			$( 'body, button, input, select, textarea' ).css( 'color', newval );
 		} );

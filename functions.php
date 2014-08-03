@@ -63,7 +63,7 @@ function christiaanconover_setup() {
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'christiaanconover_custom_background_args', array(
-		'default-color' => 'f9f9f9',
+		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 	
@@ -71,7 +71,7 @@ function christiaanconover_setup() {
 	require( 'vendor/autoload.php' );
 	
 	// Add support for site logo (https://github.com/Automattic/site-logo)
-	add_theme_support( 'site-logo' );
+	add_theme_support( 'site-logo', array( 'size' => 'medium' ) );
 }
 endif; // christiaanconover_setup
 add_action( 'after_setup_theme', 'christiaanconover_setup' );
@@ -117,7 +117,7 @@ function christiaanconover_scripts() {
 	wp_enqueue_style( 'christiaanconover-font-melbourne', get_template_directory_uri() . '/font/melbourne/melbourne.css' );
 	
 	// Google Fonts
-	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed' );
+	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed' );
 	
 	// Font Awesome
 	wp_enqueue_style( 'christiaanconover-fontawesome', get_template_directory_uri() . '/font/fontawesome/css/font-awesome.min.css' );

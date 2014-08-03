@@ -51,13 +51,10 @@ and Blueprint http://www.blueprintcss.org/
 
 /* Custom Font Faces */
 @font-face {
-	font-family: 'Melbourne';
-	src: url( 'font/melbourne/melbourne.eot' );
-	src: url( 'font/melbourne/melbourne.woff' ) format( 'woff' ),
-		 url( 'font/melbourne/melbourne.ttf' ) format( 'truetype' ),
-		 url( 'font/melbourne/melbourne.svg' ) format( 'svg' );
-		 font-weight: normal;
-		 font-style: normal;
+	font-family: "Melbourne";
+	src: url("font/melbourne/melbourne.eot?") format("eot"),
+	url("font/melbourne/melbourne.woff") format("woff"),
+	url("font/melbourne/melbourne.ttf") format("truetype");
 }
 
 /*--------------------------------------------------------------
@@ -163,7 +160,7 @@ button,
 input,
 select,
 textarea {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
@@ -176,18 +173,19 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-weight: bold;
 }
 h1 {
-	font-size: 1.5em;
+	font-size: 1.6em;
 }
 h2 {
-	font-size: 1.3em;
+	font-size: 1.4em;
 }
 h3 {
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 h4 {
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 h5 {
 	font-size: 0.9em;
@@ -447,15 +445,12 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	text-decoration: none;
+	transition: all 150ms linear;
 }
 
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.main-navigation {
-	width: 175px;
-}
-
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
@@ -612,9 +607,9 @@ a {
 10.1 Body
 --------------------------------------------------------------*/
 body {
-	position: absolute;
-	top: 100px;
 	width: 100%;
+	position: absolute;
+	top: 95px;
 }
 
 /*--------------------------------------------------------------
@@ -625,47 +620,46 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
+	height: 95px;
 	padding: 0.5em;
 	z-index: 45;
 	font-family: 'Melbourne', sans-serif;
 	line-height: 1;
+	border-bottom: 1px solid #AAAAAA;
+	transition: all 200ms linear;
 }
 
 .site-branding,
-.main-navigation {
+.nav-block {
 	display: block;
+	width: auto;
 	text-align: center;
-}
-
-.site-branding {
-	width: 21.25em;
-	max-width: 100%;
 	margin: 0 auto;
 }
 
-.main-navigation {
+.nav-block {
 	margin: 0.5em auto 0;
+}
+.main-navigation,
+.site-social {
+	text-align: center;
 }
 
 .site-logo,
-.site-title {
+.site-title,
+.main-navigation,
+.site-social {
 	display: inline;
 	vertical-align: middle;
 }
 .site-logo {
-	width: 3em;
+	height: 3em;
+	width: auto;
 }
-
-
 .site-title a {
 	padding: 1em 0;
 }
-
 .site-description {
-	display: none;
-}
-
-.site-social {
 	display: none;
 }
 
@@ -674,9 +668,15 @@ body {
 --------------------------------------------------------------*/
 .site-content {
 	display: block;
-	width: 90%;
-	max-width: 40em;
+	width: 100%;
 	margin: 0 auto 4em;
+}
+
+/*--------------------------------------------------------------
+10.4 Footer
+--------------------------------------------------------------*/
+.site-footer {
+	font-size: 0.9em;
 }
 
 /*--------------------------------------------------------------
@@ -690,12 +690,65 @@ body {
 }
 
 .hentry {
-	max-width: 40em;
+	width: 100%;
 	margin: 0 auto 1.5em;
+	position: relative;
+}
+
+.post-featured-image {
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 45em;
+	height: 20em;
+	margin: 0 auto;
+	background-color: #303030;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 0;
+}
+.single .post-featured-image,
+.page .post-featured-image {
+	max-width: none;
+	height: 30em;
+}
+.post-featured-image .entry-header-container {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+	color: #ffffff;
+	z-index: 1;
+	background-color: rgba(00,00,00,0.5);
+}
+.post-featured-image .entry-header {
+	position: relative;
+	top: 7em;
+}
+.post-featured-image .entry-title {
+	margin-bottom: 0.5em;
+}
+
+.entry-header {
+	width: 90%;
+	max-width: 40em;
+	margin: 0 auto;
+}
+
+.entry-header .entry-meta {
+	font-size: 0.9em;
 }
 
 .entry-title {
 	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: normal;
+	line-height: 1.3;
+}
+.single .entry-title,
+.page .entry-title {
+	font-size: 2em;
 }
 
 .byline,
@@ -703,15 +756,35 @@ body {
 	display: none;
 }
 
+.featured-image-caption {
+	width: 100%;
+	text-align: right;
+	font-size: 0.9em;
+	padding: 0.2em;
+}
+.featured-image-caption span {
+	margin: 0 0.5em;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	width: 90%;
+	max-width: 40em;
+	margin: 1.5em auto 0;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.entry-footer,
+.post-navigation,
+.comments-area {
+	width: 90%;
+	max-width: 40em;
+	margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
@@ -734,20 +807,6 @@ body {
 }
 
 /*--------------------------------------------------------------
-12.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
 13.0 Media
 --------------------------------------------------------------*/
 .page-content img.wp-smiley,
@@ -762,8 +821,7 @@ body {
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
-object,
-video {
+object {
 	max-width: 100%;
 }
 
@@ -854,11 +912,8 @@ video {
 	transform: translateY(-100%);
 }
 
-.site-header.headroom {
+.site-header.headroom--pinned.headroom--not-top {
 	box-shadow: 0 2px 2px #AAAAAA;
-}
-.site-header.headroom--unpinned {
-	box-shadow: none;
 }
 
 /*--------------------------------------------------------------

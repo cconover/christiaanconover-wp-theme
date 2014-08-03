@@ -16,7 +16,7 @@
 jQuery(function() {
 	jQuery("#masthead, #wpadminbar").headroom( {
 		"tolerance": 0,
-		"offset": 50,
+		"offset": 0,
 		"classes": {
 			"initial": "headroom",
 			"pinned": "headroom--pinned",

@@ -6,7 +6,7 @@
  */
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * Add elements to the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -16,106 +16,140 @@ function christiaanconover_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 	
 	/* Settings */
-	// Header text color
-	$wp_customize->add_setting( 'header_textcolor', array(
-		'default'		=> '#303030',
-		'transport'		=> 'postMessage'
-	) );
-	// Header background color
-	$wp_customize->add_setting( 'header_bgcolor', array(
-		'default'		=> '#ffffff',
-		'transport'		=> 'postMessage'
-	) );
-	
-	// Main menu color
-	$wp_customize->add_setting( 'main_menu_color', array(
-		'default'		=> '#3084CF',
-		'transport'		=> 'postMessage'
-	) );
-	
 	// Body text color
-	$wp_customize->add_setting( 'body_textcolor', array(
+	$wp_customize->add_setting( 'text_color', array(
 		'default'		=> '#404040',
 		'transport'		=> 'postMessage'
 	) );
 	// Link color
 	$wp_customize->add_setting( 'link_color', array(
-		'default'		=> '#3084CF',
+		'default'		=> '#a30000',
+		'transport'		=> 'postMessage'
+	) );
+	// Link hover color
+	$wp_customize->add_setting( 'link_hover_color', array(
+		'default'		=> '#3084cf',
+		'transport'		=> 'refresh'
+	) );
+	
+	// Header background color
+	$wp_customize->add_setting( 'header_bgcolor', array(
+		'default'		=> '#ffffff',
+		'transport'		=> 'postMessage'
+	) );
+	// Header text color
+	$wp_customize->add_setting( 'header_textcolor', array(
+		'default'		=> '#303030',
 		'transport'		=> 'postMessage'
 	) );
 	
-	// Footer text color
-	$wp_customize->add_setting( 'footer_textcolor', array(
-		'default'		=> '#e2e2e2',
+	// Main menu color
+	$wp_customize->add_setting( 'main_menu_color', array(
+		'default'		=> 'a30000',
 		'transport'		=> 'postMessage'
 	) );
+	
 	// Footer background color
 	$wp_customize->add_setting( 'footer_bgcolor', array(
-		'default'		=> '#232323',
+		'default'		=> '#2b3542',
+		'transport'		=> 'postMessage'
+	) );
+	// Footer text color
+	$wp_customize->add_setting( 'footer_textcolor', array(
+		'default'		=> '#9499a0',
 		'transport'		=> 'postMessage'
 	) );
 	// Footer link color
 	$wp_customize->add_setting( 'footer_link_color', array(
-		'default'		=> '#02a2ff',
+		'default'		=> '#ffffff',
+		'transport'		=> 'postMessage'
+	) );
+	
+	// Twitter
+	$wp_customize->add_setting( 'twitter_url', array(
+		'default'		=> '',
+		'transport'		=> 'postMessage'
+	) );
+	// Facebook
+	$wp_customize->add_setting( 'facebook_url', array(
+		'default'		=> '',
 		'transport'		=> 'postMessage'
 	) );
 	/* End Settings */
 	
 	/* Sections */
-	
+	$wp_customize->add_section( 'christiaanconover_social', array(
+		'title'			=> __( 'Social', 'christiaanconover' ),
+		'priority'		=> 30
+	) );
 	/* End Sections */
 	
 	/* Controls */
-	// Header text color
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_textcolor', array(
-		'label'			=> __( 'Header Text Color', 'christiaanconover' ),
+	// Text color
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
+		'label'			=> __( 'Text Color', 'christiaanconover' ),
 		'section'		=> 'colors',
-		'settings'		=> 'header_textcolor'
+		'settings'		=> 'text_color',
+		'priority'		=> 11
 	) ) );
+	// Link color
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+		'label'			=> __( 'Link Color', 'christiaanconover' ),
+		'section'		=> 'colors',
+		'settings'		=> 'link_color',
+		'priority'		=> 12
+	) ) );
+	// Link hover color
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
+		'label'			=> __( 'Link Hover Color', 'christiaanconover' ),
+		'section'		=> 'colors',
+		'settings'		=> 'link_hover_color',
+		'priority'		=> 13
+	) ) );
+	
 	// Header background color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_bgcolor', array(
 		'label'			=> __( 'Header Background Color', 'christiaanconover' ),
 		'section'		=> 'colors',
-		'settings'		=> 'header_bgcolor'
+		'settings'		=> 'header_bgcolor',
+		'priority'		=> 14
+	) ) );
+	// Header text color
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_textcolor', array(
+		'label'			=> __( 'Header Text Color', 'christiaanconover' ),
+		'section'		=> 'colors',
+		'settings'		=> 'header_textcolor',
+		'priority'		=> 15
 	) ) );
 	
 	// Main menu color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'main_menu_color', array(
 		'label'			=> __( 'Main Menu Color', 'christiaanconover' ),
 		'section'		=> 'colors',
-		'settings'		=> 'main_menu_color'
+		'settings'		=> 'main_menu_color',
+		'priority'		=> 16
 	) ) );
 	
-	// Body text color
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_textcolor', array(
-		'label'			=> __( 'Body Text Color', 'christiaanconover' ),
-		'section'		=> 'colors',
-		'settings'		=> 'body_textcolor'
-	) ) );
-	// Link color
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'			=> __( 'Link Color', 'christiaanconover' ),
-		'section'		=> 'colors',
-		'settings'		=> 'link_color'
-	) ) );
-	
-	// Footer text color
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', array(
-		'label'			=> __( 'Footer Text Color', 'christiaanconover' ),
-		'section'		=> 'colors',
-		'settings'		=> 'footer_textcolor'
-	) ) );
 	// Footer background color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', array(
 		'label'			=> __( 'Footer Background Color', 'christiaanconover' ),
 		'section'		=> 'colors',
-		'settings'		=> 'footer_bgcolor'
+		'settings'		=> 'footer_bgcolor',
+		'priority'		=> 17
+	) ) );
+	// Footer text color
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', array(
+		'label'			=> __( 'Footer Text Color', 'christiaanconover' ),
+		'section'		=> 'colors',
+		'settings'		=> 'footer_textcolor',
+		'priority'		=> 18
 	) ) );
 	// Footer link color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_link_color', array(
 		'label'			=> __( 'Footer Link Color', 'christiaanconover' ),
 		'section'		=> 'colors',
-		'settings'		=> 'footer_link_color'
+		'settings'		=> 'footer_link_color',
+		'priority'		=> 19
 	) ) );
 	/* End Controls */
 }
@@ -129,14 +163,20 @@ function christiaanconover_customizer_header_output() {
 	<!-- Customizer CSS -->
 	<style type="text/css">
 		<?php christiaanconover_customizer_css_generate( 'a', 'color', 'link_color' ); ?>
-		<?php christiaanconover_customizer_css_generate( 'body, button, input, select, textarea', 'color', 'body_textcolor' ); ?>
+		<?php christiaanconover_customizer_css_generate( 'a:hover, a:active, a:focus', 'color', 'link_hover_color' ); ?>
+		<?php christiaanconover_customizer_css_generate( 'body, button, input, select, textarea', 'color', 'text_color' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-header', 'background', 'header_bgcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-title a', 'color', 'header_textcolor', '#' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-description', 'color', 'header_textcolor', '#' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.main-navigation a', 'color', 'main_menu_color' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.main-navigation a:hover, .main-navigation a:active, .main-navigation a:focus', 'color', 'link_hover_color' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.featured-image-caption', 'background', 'footer_bgcolor' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.featured-image-caption', 'color', 'footer_textcolor' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.featured-image-caption a', 'color', 'footer_link_color' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-footer', 'background', 'footer_bgcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-footer', 'color', 'footer_textcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-footer a', 'color', 'footer_link_color' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.site-footer a:hover, .site-footer a:active, .site-footer a:focus', 'color', 'link_hover_color' ); ?>
 	</style>
 	<?php
 } // End christiaanconover_customizer_header_output()

@@ -125,6 +125,47 @@ function christiaanconover_categorized_blog() {
 }
 
 /**
+ * Get the URL for the post featured image
+ * @param string $attribute the attribute of the featurd image to retrieve
+ * @param bool $echo whether to print the result to the page
+ * @return $result the URL of the featured image
+ */
+function christiaanconover_featured_image_url( $attribute='url', $echo = true ) {
+	// Access the post object
+	global $post;
+	
+	// Start with an empty result
+	$result = null;
+	
+	// If we have a post object and the post has a featured image
+	if ( ! empty( $post ) && has_post_thumbnail( $post->ID ) ) {
+		// Get the post thumbnail details
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id ( $post->ID ), 'single-post-thumbnail' );
+		
+		// Set the result to the requested attribute of the image
+		switch ( $attribute ) {
+			case 'url' :
+				$result = $image[0];
+				break;
+			case 'width' :
+				$result = $image[1];
+				break;
+			case 'height' :
+				$result = $image[2];
+				break;
+		}
+		
+		// If $echo is true, print the URL
+		if ( $echo ) {
+			echo $result;
+		}
+		else {
+			return $result;
+		}
+	}
+} // End christiaanconover_featured_image_url()
+
+/**
  * Flush out the transients used in christiaanconover_categorized_blog.
  */
 function christiaanconover_category_transient_flusher() {

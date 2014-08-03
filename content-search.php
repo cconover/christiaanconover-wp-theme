@@ -10,6 +10,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php
+		if ( has_post_thumbnail() ) {
+			?>
+			<a class="post-featured-image" style="background-image: url( '<?php echo christiaanconover_featured_image_url( $post ); ?>' );" href="<?php echo get_permalink(); ?>"></a>
+			<?php
+		}
+		?>
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>

@@ -26,12 +26,14 @@
 			<div class="site-logo"><?php the_site_logo(); ?></div>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-		<div class="site-social">
-			SOCIAL LINKS HERE
-		</div><!-- .site-social -->
+		</div><!-- .site-branding -->
+		
+		<div class="nav-block">
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav><!-- #site-navigation -->
+			<div class="site-social">
+				SOCIAL LINKS HERE
+			</div><!-- .site-social -->
+		</div><!-- .nav-block -->
 	</header><!-- #masthead --><div id="content" class="site-content">
