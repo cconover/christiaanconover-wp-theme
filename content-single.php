@@ -10,7 +10,9 @@
 			<div class="entry-header-container">
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		
+					<?php if ( has_excerpt() ) : ?>
+						<h2 class="entry-summary"><?php echo get_the_excerpt(); ?></h2>
+					<?php endif; ?>
 					<div class="entry-meta">
 						<?php christiaanconover_posted_on(); ?>
 					</div><!-- .entry-meta -->
@@ -31,7 +33,9 @@
 	<?php else : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		
+			<?php if ( has_excerpt() ) : ?>
+				<h2 class="entry-summary"><?php echo get_the_excerpt(); ?></h2>
+			<?php endif; ?>
 			<div class="entry-meta">
 				<?php christiaanconover_posted_on(); ?>
 			</div><!-- .entry-meta -->
