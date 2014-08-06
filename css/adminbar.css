@@ -22,3 +22,13 @@ body,
 		margin-top: 46px;
 	}
 }
+
+@media all and (min-width: 1024px) {
+	body {
+		margin-top: 0;
+	}
+	
+	.headroom--unpinned {
+		transform: none;
+	}
+}

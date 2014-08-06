@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 960; /* pixels */
+	$content_width = 640; /* pixels */
 }
 
 if ( ! function_exists( 'christiaanconover_setup' ) ) :
@@ -77,18 +77,12 @@ endif; // christiaanconover_setup
 add_action( 'after_setup_theme', 'christiaanconover_setup' );
 
 /**
- * Add custom image sizes to admin
+ * Add custom image sizes
  */
 if ( function_exists( 'add_image_size' ) ) {
 	// Extra-large image (1024px)
 	add_image_size( 'x-large', 1024, 1024, false );
 }
-function christiaanconover_custom_image_sizes( $sizes ) {
-	return array_merge( $sizes, array(
-		'x-large'	=> __('Extra Large'),
-	) );
-} // End christiaanconover_custom_image_sizes()
-add_filter( 'image_size_names_choose', 'christiaanconover_custom_image_sizes' );
 
 /**
  * Register widget area.

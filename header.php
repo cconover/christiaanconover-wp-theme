@@ -29,11 +29,11 @@
 		</div><!-- .site-branding -->
 		
 		<div class="nav-block">
+			<div class="site-social">
+				<?php echo christiaanconover_social_links(); ?>
+			</div><!-- .site-social -->
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
-			<div class="site-social">
-				SOCIAL LINKS HERE
-			</div><!-- .site-social -->
 		</div><!-- .nav-block -->
 	</header><!-- #masthead --><div id="content" class="site-content">

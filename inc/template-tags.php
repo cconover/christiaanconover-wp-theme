@@ -166,6 +166,26 @@ function christiaanconover_featured_image_url( $attribute='url', $echo = true ) 
 } // End christiaanconover_featured_image_url()
 
 /**
+ * Social header links
+ */
+function christiaanconover_social_links() {
+	// If any social links are set, create an unordered list
+	if ( get_theme_mod( 'twitter_url' ) || get_theme_mod( 'facebook_url' ) ) {
+		echo '<ul>';
+		
+		// Iterate through each possible social link
+		if ( get_theme_mod( 'twitter_url' ) ) {
+			echo '<a class="fa fa-twitter-square" href="' . get_theme_mod( 'twitter_url' ) . '"></a>';
+		}
+		if ( get_theme_mod( 'facebook_url' ) ) {
+			echo '<a class="fa fa-facebook-square" href="' . get_theme_mod( 'facebook_url' ) . '"></a>';
+		}
+		
+		echo '</ul>';
+	}
+} // End christiaanconover_social_links()
+
+/**
  * Flush out the transients used in christiaanconover_categorized_blog.
  */
 function christiaanconover_category_transient_flusher() {

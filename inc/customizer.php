@@ -68,19 +68,19 @@ function christiaanconover_customize_register( $wp_customize ) {
 	// Twitter
 	$wp_customize->add_setting( 'twitter_url', array(
 		'default'		=> '',
-		'transport'		=> 'postMessage'
+		'transport'		=> 'refresh'
 	) );
 	// Facebook
 	$wp_customize->add_setting( 'facebook_url', array(
 		'default'		=> '',
-		'transport'		=> 'postMessage'
+		'transport'		=> 'refresh'
 	) );
 	/* End Settings */
 	
 	/* Sections */
-	$wp_customize->add_section( 'christiaanconover_social', array(
+	$wp_customize->add_section( 'social', array(
 		'title'			=> __( 'Social', 'christiaanconover' ),
-		'priority'		=> 30
+		'priority'		=> 110
 	) );
 	/* End Sections */
 	
@@ -132,25 +132,38 @@ function christiaanconover_customize_register( $wp_customize ) {
 	
 	// Footer background color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', array(
-		'label'			=> __( 'Footer Background Color', 'christiaanconover' ),
+		'label'			=> __( 'Footer/Caption Background Color', 'christiaanconover' ),
 		'section'		=> 'colors',
 		'settings'		=> 'footer_bgcolor',
 		'priority'		=> 17
 	) ) );
 	// Footer text color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', array(
-		'label'			=> __( 'Footer Text Color', 'christiaanconover' ),
+		'label'			=> __( 'Footer/Caption Text Color', 'christiaanconover' ),
 		'section'		=> 'colors',
 		'settings'		=> 'footer_textcolor',
 		'priority'		=> 18
 	) ) );
 	// Footer link color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_link_color', array(
-		'label'			=> __( 'Footer Link Color', 'christiaanconover' ),
+		'label'			=> __( 'Footer/Caption Link Color', 'christiaanconover' ),
 		'section'		=> 'colors',
 		'settings'		=> 'footer_link_color',
 		'priority'		=> 19
 	) ) );
+	
+	// Twitter URL
+	$wp_customize->add_control( 'twitter_url', array(
+		'label'			=> __( 'Twitter URL', 'christiaanconover' ),
+		'section'		=> 'social',
+		'settings'		=> 'twitter_url'
+	) );
+	// Facebook URL
+	$wp_customize->add_control( 'facebook_url', array(
+		'label'			=> __( 'Facebook URL', 'christiaanconover' ),
+		'section'		=> 'social',
+		'settings'		=> 'facebook_url'
+	) );
 	/* End Controls */
 }
 add_action( 'customize_register', 'christiaanconover_customize_register' );
@@ -173,6 +186,9 @@ function christiaanconover_customizer_header_output() {
 		<?php christiaanconover_customizer_css_generate( '.featured-image-caption', 'background', 'footer_bgcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.featured-image-caption', 'color', 'footer_textcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.featured-image-caption a', 'color', 'footer_link_color' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.wp-caption .wp-caption-text', 'background', 'footer_bgcolor' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.wp-caption .wp-caption-text', 'color', 'footer_textcolor' ); ?>
+		<?php christiaanconover_customizer_css_generate( '.wp-caption .wp-caption-text a', 'color', 'footer_link_color' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-footer', 'background', 'footer_bgcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-footer', 'color', 'footer_textcolor' ); ?>
 		<?php christiaanconover_customizer_css_generate( '.site-footer a', 'color', 'footer_link_color' ); ?>
