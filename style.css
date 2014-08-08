@@ -3,7 +3,7 @@ Theme Name: Christiaan Conover
 Theme URI: https://christiaanconover.com
 Author: Christiaan Conover
 Author URI: https://christiaanconover.com
-Description: Bespoke theme for Christiaan Conover\'s personal site.
+Description: Bespoke theme for Christiaan Conover's personal site.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -664,6 +664,8 @@ body {
 }
 .site-description {
 	display: none;
+	font-size: 1.2em;
+	font-weight: normal;
 }
 
 .site-social {
@@ -747,6 +749,7 @@ body {
 	min-height: 100%;
 	margin: 0 auto 1.5em;
 	position: relative;
+	word-wrap: break-word;
 }
 
 .post-featured-image {
@@ -760,7 +763,6 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 0;
-	transition: all 200ms;
 }
 .single .post-featured-image,
 .page .post-featured-image {
@@ -850,9 +852,6 @@ body {
 .post-navigation {
 	margin: 0 auto;
 }
-.comments-area {
-	margin: 5em auto 0;
-}
 
 /*--------------------------------------------------------------
 11.2 Asides
@@ -865,6 +864,20 @@ body {
 /*--------------------------------------------------------------
 11.3 Comments
 --------------------------------------------------------------*/
+.comments-area {
+	margin: 5em auto 0;
+}
+
+.comments-area ol,
+.comments-area ul {
+	list-style: none;
+	margin: 0 0 1.5em;
+}
+.comments-area li > ol,
+.comments-area li > ul {
+    margin-left: 1.5em;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1032,6 +1045,9 @@ object {
 	.site-title a {
 		padding: 1em 0;
 	}
+	.site-description {
+		margin: 0.2em auto 0;
+	}
 
 	.site-social {
 		float: none;
@@ -1050,8 +1066,13 @@ object {
 	}
 	
 	.site-content {
+		margin-top: 1em;
 		margin-left: 250px;
 		width: auto;
+	}
+	.single .site-content,
+	.page .site-content {
+		margin-top: 0;
 	}
 	
 	.single .post-featured-image,
