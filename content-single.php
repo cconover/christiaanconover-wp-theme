@@ -21,13 +21,10 @@
 		</div><!-- .post-featured-image -->
 		
 		<?php
-		// Get featured image caption
-		$postimage_caption = cc_featured_image_caption();
-		
 		// If a caption is set, display it
-		if ( ! false == $postimage_caption ) : ?>
+		if ( cc_has_featured_image_caption() ) : ?>
 			<div class="featured-image-caption">
-				<?php echo $postimage_caption; ?>
+				<?php cc_featured_image_caption(); ?>
 			</div><!-- .featured-image-caption -->
 		<?php endif; ?>
 	<?php else : ?>
