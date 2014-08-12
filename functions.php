@@ -108,7 +108,7 @@ add_action( 'widgets_init', 'christiaanconover_widgets_init' );
  */
 function christiaanconover_scripts() {
 	// Google Fonts
-	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed' );
+	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Roboto:400,900|Roboto+Condensed' );
 	
 	// Font Awesome
 	wp_enqueue_style( 'christiaanconover-fontawesome', get_template_directory_uri() . '/font/fontawesome/css/font-awesome.min.css' );
