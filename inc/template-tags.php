@@ -130,18 +130,18 @@ function christiaanconover_categorized_blog() {
  * @param bool $echo whether to print the result to the page
  * @return $result the URL of the featured image
  */
-function christiaanconover_featured_image_url( $attribute='url', $echo = true ) {
+function christiaanconover_featured_image_url( $attribute='url', $size = 'large', $echo = true ) {
 	// Access the post object
 	global $post;
-	
+
 	// Start with an empty result
 	$result = null;
-	
+
 	// If we have a post object and the post has a featured image
 	if ( ! empty( $post ) && has_post_thumbnail( $post->ID ) ) {
 		// Get the post thumbnail details
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id ( $post->ID ), 'single-post-thumbnail' );
-		
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id ( $post->ID ), $size );
+
 		// Set the result to the requested attribute of the image
 		switch ( $attribute ) {
 			case 'url' :
@@ -154,7 +154,7 @@ function christiaanconover_featured_image_url( $attribute='url', $echo = true ) 
 				$result = $image[2];
 				break;
 		}
-		
+
 		// If $echo is true, print the URL
 		if ( $echo ) {
 			echo $result;
@@ -172,7 +172,7 @@ function christiaanconover_social_links() {
 	// If any social links are set, create an unordered list
 	if ( get_theme_mod( 'twitter_url' ) || get_theme_mod( 'facebook_url' ) ) {
 		echo '<ul>';
-		
+
 		// Iterate through each possible social link
 		if ( get_theme_mod( 'twitter_url' ) ) {
 			echo '<a class="fa fa-twitter-square" href="' . get_theme_mod( 'twitter_url' ) . '"></a>';
@@ -180,7 +180,7 @@ function christiaanconover_social_links() {
 		if ( get_theme_mod( 'facebook_url' ) ) {
 			echo '<a class="fa fa-facebook-square" href="' . get_theme_mod( 'facebook_url' ) . '"></a>';
 		}
-		
+
 		echo '</ul>';
 	}
 } // End christiaanconover_social_links()
