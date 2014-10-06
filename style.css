@@ -809,11 +809,11 @@ body {
 .featured-image-caption {
 	width: 100%;
 	text-align: right;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	padding: 0.2em;
 }
-.featured-image-caption span {
-	margin: 0 0.5em;
+.cc-featured-image-caption-source {
+	font-style: italic;
 }
 
 .page-content,
@@ -1035,7 +1035,7 @@ object {
 	.site-social {
 		float: none;
 	}
-	
+
 	.main-navigation {
 		position: absolute;
 		top: 10px;
@@ -1047,7 +1047,7 @@ object {
 	.site-header.headroom--pinned.headroom--not-top {
 		box-shadow: none;
 	}
-	
+
 	.site-content {
 		margin-top: 1em;
 		margin-left: 250px;
@@ -1057,7 +1057,7 @@ object {
 	.page .site-content {
 		margin-top: 0;
 	}
-	
+
 	.single .post-featured-image,
 	.page .post-featured-image,
 	.post-featured-image .entry-header-container {
