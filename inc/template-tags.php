@@ -166,6 +166,43 @@ function christiaanconover_featured_image_url( $attribute='url', $size = 'large'
 } // End christiaanconover_featured_image_url()
 
 /**
+ * Generate meta description tag, depending on the page being displayed
+ *
+ * @param 	boolean $echo Whether to print the results. Print if true, return if false.
+ * @return 	string
+ */
+function christiaanconover_meta_description( $echo = true ) {
+	// If displaying single post or page
+	if ( is_single() ) {
+		global $post;
+		// If the post has an excerpt, get it. Otherwise, set to null
+		if ( has_excerpt() ) {
+			$description = get_the_excerpt();
+		}
+		else {
+			$description = null;
+		}
+	}
+	// Everywhere that isn't a single post or page
+	else {
+		$description = get_bloginfo( 'description' );
+	}
+
+	// If the description is set to null, return null
+	if ( null == $description ) {
+		return null;
+	}
+
+	$meta = '<meta name="description" content="' . $description .'">' . PHP_EOL;
+
+	if ( false == $echo ) {
+		return $meta;
+	}
+
+	echo $meta;
+} // christiaanconover_meta_description()
+
+/**
  * Social header links
  */
 function christiaanconover_social_links() {
