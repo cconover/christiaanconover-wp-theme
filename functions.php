@@ -44,7 +44,7 @@ function christiaanconover_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'christiaanconover' ),
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -66,10 +66,10 @@ function christiaanconover_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-	
+
 	// Require Composer
 	require( 'vendor/autoload.php' );
-	
+
 	// Add support for site logo (https://github.com/Automattic/site-logo)
 	add_theme_support( 'site-logo', array( 'size' => 'medium' ) );
 }
@@ -109,18 +109,18 @@ add_action( 'widgets_init', 'christiaanconover_widgets_init' );
 function christiaanconover_scripts() {
 	// Google Fonts
 	wp_enqueue_style( 'christiaanconover-googlefonts', 'https://fonts.googleapis.com/css?family=Roboto:400,900|Roboto+Condensed' );
-	
+
 	// Font Awesome
 	wp_enqueue_style( 'christiaanconover-fontawesome', get_template_directory_uri() . '/font/fontawesome/css/font-awesome.min.css' );
-	
+
 	// Main theme stylesheet
 	wp_enqueue_style( 'christiaanconover-style', get_stylesheet_uri() );
-	
+
 	// Admin bar accomodation
 	if ( is_admin_bar_showing() ) {
 		wp_enqueue_style( 'christiaanconover-adminbar', get_template_directory_uri() . '/css/adminbar.css' );
 	}
-	
+
 	// Headroom.js
 	wp_enqueue_script( 'christiaanconover-headroomjs', get_template_directory_uri() . '/js/headroom.js', array( 'jquery' ) );
 
@@ -147,51 +147,51 @@ function christiaanconover_register_required_plugins() {
 		 	'name'					=> 'Author Customization', // Name of the plugin
 		 	'slug'					=> 'author-customization', // Slug for the plugin
 		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 	'force_activation'		=> true // Force the plugin to activate on theme activation, and keep plugin active as long as theme is active
 		 ),
-		 
+
 		 // Featured Image Caption
 		 array(
 		 	'name'					=> 'Featured Image Caption', // Name of the plugin
 		 	'slug'					=> 'featured-image-caption', // Slug for the plugin
 		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 	'force_activation'		=> true // Force the plugin to activate on theme activation, and keep plugin active as long as theme is active
 		 ),
-		 
+
 		 // Jetpack
 		 array(
 		 	'name'					=> 'Jetpack', // Name of the plugin
 		 	'slug'					=> 'jetpack', // Slug for the plugin
 		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 	'force_activation'		=> true // Force the plugin to activate on theme activation, and keep plugin active as long as theme is active
 		 ),
-		 
+
 		 // Liveblog
 		 array(
 		 	'name'					=> 'Liveblog', // Name of the plugin
 		 	'slug'					=> 'liveblog', // Slug for the plugin
 		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 	'force_activation'		=> true // Force the plugin to activate on theme activation, and keep plugin active as long as theme is active
 		 ),
-		 
+
 		 // Site Logo (GitHub repo as source)
 		 array(
 		 	'name'					=> 'Site Logo', // Name of the plugin
 		 	'slug'					=> 'site-logo-master', // Slug for the plugin
 		 	'source'				=> 'https://github.com/Automattic/site-logo/archive/master.zip', // Source from where the plugin should be retrieved
 		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 	'force_activation'		=> true // Force the plugin to activate on theme activation, and keep plugin active as long as theme is active
 		 ),
-		 
+
 		 // WP Fragmention
 		 array(
 		 	'name'					=> 'WP Fragmention', // Name of the plugin
 		 	'slug'					=> 'wp-fragmention', // Slug for the plugin
 		 	'required'				=> true, // Plugin is required for the theme to be active
-		 	'force_activation'		=> true // Force the plugin to activate on them activation, and keep plugin active as long as theme is active
+		 	'force_activation'		=> true // Force the plugin to activate on theme activation, and keep plugin active as long as theme is active
 		 ),
 	 );
-	 
+
 	 /**
 	  * Configuration array
 	  * All elements are optional
@@ -201,7 +201,7 @@ function christiaanconover_register_required_plugins() {
 	  	'dismissable'			=> false, // Do not allow user to dismiss admin notices
 	  	'is_automatic'			=> true, // Automatically activate plugins when they are installed
 	  );
-	  
+
 	  tgmpa( $plugins, $config );
 } // End christiaanconover_register_required_plugins()
 add_action( 'tgmpa_register', 'christiaanconover_register_required_plugins' );
