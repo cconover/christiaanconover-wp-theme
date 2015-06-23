@@ -1,0 +1,12 @@
+{
+  "name": "christiaanconover",
+  "main": [
+    "css/christiaanconover.css",
+    "js/christiaanconover.js"
+  ],
+  "ignore": [],
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "fontawesome": "~4.3.0"
+  }
+}

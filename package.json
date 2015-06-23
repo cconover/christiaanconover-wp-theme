@@ -1,0 +1,37 @@
+{
+  "name": "christiaanconover",
+  "description": "Bespoke WordPress theme for ChristiaanConover.com",
+  "main": "index.php",
+  "dependencies": {
+    "time-grunt": "^1.2.1"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-sass": "^0.18.1",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-contrib-uglify": "^0.2.7",
+    "grunt-string-replace": "^0.2.8",
+    "node-sass": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cconover/christiaanconover-wp-theme.git"
+  },
+  "keywords": [
+    "wordpress",
+    "php"
+  ],
+  "author": "Christiaan Conover",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cconover/christiaanconover-wp-theme/issues"
+  },
+  "homepage": "https://github.com/cconover/christiaanconover-wp-theme#readme"
+}

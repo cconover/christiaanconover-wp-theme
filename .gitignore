@@ -1,14 +1,25 @@
-composer.lock
-.htaccess
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/upgrade/
-wp-content/backup-db/
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-sitemap.xml
-*.log
-wp-content/cache/
+# Directories
+*sass-cache*
+bower_components/
+node_modules/
+vendor/
 wp-content/backups/
+wp-content/backup-db/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+
+# Files
+.htaccess
+*.log
+*_log
+sitemap.xml
 sitemap.xml.gz
 wp-config.php
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# System
+.DS_Store
+Thumbs.db

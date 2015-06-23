@@ -1,28 +1,45 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying pages
  *
  * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Please note that this is the WordPress construct of pages and that
+ * other "pages" on your WordPress site will use a different template.
  *
- * @package Christiaan Conover
+ * @package WordPress
+ * @subpackage ChristiaanConover
+ * @since ChristiaanConover 1.0
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="row">
+	<div class="small-12 large-8 columns" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+	<?php do_action( 'christiaanconover_before_content' ); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<header>
+				<h1 class="entry-title"><?php the_title(); ?></h1>
+			</header>
+			<?php do_action( 'christiaanconover_page_before_entry_content' ); ?>
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div>
+			<footer>
+				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'christiaanconover' ), 'after' => '</p></nav>' ) ); ?>
+				<p><?php the_tags(); ?></p>
+			</footer>
+			<?php do_action( 'christiaanconover_page_before_comments' ); ?>
+			<?php comments_template(); ?>
+			<?php do_action( 'christiaanconover_page_after_comments' ); ?>
+		</article>
+	<?php endwhile;?>
 
-			<?php endwhile; // end of the loop. ?>
+	<?php do_action( 'christiaanconover_after_content' ); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+	</div>
+	<?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
