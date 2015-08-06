@@ -14,17 +14,17 @@ get_header(); ?>
 
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header>
-				<h1 class="entry-title"><?php _e( 'File Not Found', 'christiaanconover' ); ?></h1>
+				<h1 class="entry-title"><?php _e( 'File Not Found', THEME_ID ); ?></h1>
 			</header>
 			<div class="entry-content">
 				<div class="error">
-					<p class="bottom"><?php _e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'christiaanconover' ); ?></p>
+					<p class="bottom"><?php _e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', THEME_ID ); ?></p>
 				</div>
-				<p><?php _e( 'Please try the following:', 'christiaanconover' ); ?></p>
+				<p><?php _e( 'Please try the following:', THEME_ID ); ?></p>
 				<ul>
-					<li><?php _e( 'Check your spelling', 'christiaanconover' ); ?></li>
-					<li><?php printf( __( 'Return to the <a href="%s">home page</a>', 'christiaanconover' ), home_url() ); ?></li>
-					<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', 'christiaanconover' ); ?></li>
+					<li><?php _e( 'Check your spelling', THEME_ID ); ?></li>
+					<li><?php printf( __( 'Return to the <a href="%s">home page</a>', THEME_ID ), home_url() ); ?></li>
+					<li><?php _e( 'Click the <a href="javascript:history.back()">Back</a> button', THEME_ID ); ?></li>
 				</ul>
 			</div>
 		</article>

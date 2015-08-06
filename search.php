@@ -14,7 +14,7 @@ get_header(); ?>
 
 		<?php do_action( 'christiaanconover_before_content' ); ?>
 
-		<h2><?php _e( 'Search Results for', 'christiaanconover' ); ?> "<?php echo get_search_query(); ?>"</h2>
+		<h2><?php _e( 'Search Results for', THEME_ID ); ?> "<?php echo get_search_query(); ?>"</h2>
 
 	<?php if ( have_posts() ) : ?>
 
@@ -32,8 +32,8 @@ get_header(); ?>
 	<?php if ( function_exists( 'christiaanconover_pagination' ) ) { christiaanconover_pagination(); } else if ( is_paged() ) { ?>
 
 		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'christiaanconover' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'christiaanconover' ) ); ?></div>
+			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', THEME_ID ) ); ?></div>
+			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', THEME_ID ) ); ?></div>
 		</nav>
 	<?php } ?>
 

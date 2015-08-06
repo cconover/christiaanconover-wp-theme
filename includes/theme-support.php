@@ -10,7 +10,7 @@
 if ( ! function_exists( 'christiaanconover_theme_support' ) ) :
 function christiaanconover_theme_support() {
 	// Add language support
-	load_theme_textdomain( 'christiaanconover', get_template_directory() . '/languages' );
+	load_theme_textdomain( THEME_ID, get_template_directory() . '/languages' );
 
 	// Add menu support
 	add_theme_support( 'menus' );

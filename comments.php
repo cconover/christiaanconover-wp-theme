@@ -24,7 +24,7 @@ if ( have_comments() ) :
 				'callback'          => null,
 				'end-callback'      => null,
 				'type'              => 'all',
-				'reply_text'        => __( 'Reply', 'christiaanconover' ),
+				'reply_text'        => __( 'Reply', THEME_ID ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 48,
@@ -33,7 +33,7 @@ if ( have_comments() ) :
 				'format'            => 'html5',
 				'short_ping'        => false,
 				'echo'  	    => true,
-				'moderation' 	    => __( 'Your comment is awaiting moderation.', 'christiaanconover' ),
+				'moderation' 	    => __( 'Your comment is awaiting moderation.', THEME_ID ),
 			)
 		);
 
@@ -52,12 +52,12 @@ endif;
 	Prevent access to this file directly
 	*/
 
-	defined( 'ABSPATH' ) or die( __( 'Please do not load this page directly. Thanks!', 'christiaanconover' ) );
+	defined( 'ABSPATH' ) or die( __( 'Please do not load this page directly. Thanks!', THEME_ID ) );
 
 	if ( post_password_required() ) { ?>
 	<section id="comments">
 		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'christiaanconover' ); ?></p>
+			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', THEME_ID ); ?></p>
 		</div>
 	</section>
 	<?php
@@ -70,19 +70,19 @@ if ( comments_open() ) :
 	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
 <section id="respond">
-	<h3><?php comment_form_title( __( 'Leave a Reply', 'christiaanconover' ), __( 'Leave a Reply to %s', 'christiaanconover' ) ); ?></h3>
+	<h3><?php comment_form_title( __( 'Leave a Reply', THEME_ID ), __( 'Leave a Reply to %s', THEME_ID ) ); ?></h3>
 	<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
 	<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
-	<p><?php printf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'christiaanconover' ), wp_login_url( get_permalink() ) ); ?></p>
+	<p><?php printf( __( 'You must be <a href="%s">logged in</a> to post a comment.', THEME_ID ), wp_login_url( get_permalink() ) ); ?></p>
 	<?php else : ?>
 	<form action="<?php echo get_option( 'siteurl' ); ?>/wp-comments-post.php" method="post" id="commentform">
 		<?php if ( is_user_logged_in() ) : ?>
-		<p><?php printf( __( 'Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'christiaanconover' ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'christiaanconover' ); ?>"><?php _e( 'Log out &raquo;', 'christiaanconover' ); ?></a></p>
+		<p><?php printf( __( 'Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', THEME_ID ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', THEME_ID ); ?>"><?php _e( 'Log out &raquo;', THEME_ID ); ?></a></p>
 		<?php else : ?>
 		<p>
 			<label for="author">
 				<?php
-					_e( 'Name', 'christiaanconover' ); if ( $req ) { _e( ' (required)', 'christiaanconover' ); }
+					_e( 'Name', THEME_ID ); if ( $req ) { _e( ' (required)', THEME_ID ); }
 				?>
 			</label>
 			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
@@ -90,7 +90,7 @@ if ( comments_open() ) :
 		<p>
 			<label for="email">
 				<?php
-					_e( 'Email (will not be published)', 'christiaanconover' ); if ( $req ) { _e( ' (required)', 'christiaanconover' ); }
+					_e( 'Email (will not be published)', THEME_ID ); if ( $req ) { _e( ' (required)', THEME_ID ); }
 				?>
 			</label>
 			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
@@ -98,7 +98,7 @@ if ( comments_open() ) :
 		<p>
 			<label for="url">
 				<?php
-					_e( 'Website', 'christiaanconover' );
+					_e( 'Website', THEME_ID );
 				?>
 			</label>
 			<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
@@ -107,20 +107,20 @@ if ( comments_open() ) :
 		<p>
 			<label for="comment">
 					<?php
-						_e( 'Comment', 'christiaanconover' );
+						_e( 'Comment', THEME_ID );
 					?>
 			</label>
 			<textarea name="comment" id="comment" tabindex="4"></textarea>
 		</p>
 		<p id="allowed_tags" class="small"><strong>XHTML:</strong> 
 			<?php
-				_e( 'You can use these tags:','christiaanconover' );
+				_e( 'You can use these tags:',THEME_ID );
 			?> 
 			<code>
 				<?php echo allowed_tags(); ?>
 			</code>
 		</p>
-		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'christiaanconover' ); ?>"></p>
+		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', THEME_ID ); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>

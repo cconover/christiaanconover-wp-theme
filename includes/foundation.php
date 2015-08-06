@@ -22,8 +22,8 @@ function christiaanconover_pagination() {
 		'total' => $wp_query->max_num_pages,
 		'mid_size' => 5,
 		'prev_next' => true,
-	    'prev_text' => __( '&laquo;', 'christiaanconover' ),
-	    'next_text' => __( '&raquo;', 'christiaanconover' ),
+	    'prev_text' => __( '&laquo;', THEME_ID ),
+	    'next_text' => __( '&raquo;', THEME_ID ),
 		'type' => 'list',
 	) );
 
@@ -51,11 +51,11 @@ if ( ! function_exists( 'christiaanconover_menu_fallback' ) ) :
 function christiaanconover_menu_fallback() {
 	echo '<div class="alert-box secondary">';
 	// Translators 1: Link to Menus, 2: Link to Customize.
-		printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'christiaanconover' ),
-			sprintf(  __( '<a href="%s">Menus</a>', 'christiaanconover' ),
+		printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', THEME_ID ),
+			sprintf(  __( '<a href="%s">Menus</a>', THEME_ID ),
 				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 			),
-			sprintf(  __( '<a href="%s">Customize</a>', 'christiaanconover' ),
+			sprintf(  __( '<a href="%s">Customize</a>', THEME_ID ),
 				get_admin_url( get_current_blog_id(), 'customize.php' )
 			)
 		);
@@ -103,7 +103,7 @@ class Foundationpress_Comments extends Walker_Comment{
 	 * start_lvl() only goes as high as 1 deep nested comments */
 	function __construct() { ?>
          
-        <h3><?php comments_number( __( 'No Responses to', 'christiaanconover' ), __( 'One Response to', 'christiaanconover' ), __( '% Responses to', 'christiaanconover' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+        <h3><?php comments_number( __( 'No Responses to', THEME_ID ), __( 'One Response to', THEME_ID ), __( '% Responses to', THEME_ID ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
         <ol class="comment-list">
          
     <?php }
@@ -143,8 +143,8 @@ class Foundationpress_Comments extends Walker_Comment{
 			
 			<div class="author-meta vcard author">  
 			
-			<?php printf( __( '<cite class="fn">%s</cite>', 'christiaanconover' ), get_comment_author_link() ) ?>
-			<time datetime="<?php echo comment_date( 'c' ) ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf( __( '%1$s', 'christiaanconover' ), get_comment_date(),  get_comment_time() ) ?></a></time>
+			<?php printf( __( '<cite class="fn">%s</cite>', THEME_ID ), get_comment_author_link() ) ?>
+			<time datetime="<?php echo comment_date( 'c' ) ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf( __( '%1$s', THEME_ID ), get_comment_date(),  get_comment_time() ) ?></a></time>
 			
 			</div><!-- /.comment-author -->
 			

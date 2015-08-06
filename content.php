@@ -17,7 +17,7 @@
 		<?php christiaanconover_entry_meta(); ?>
 	</header>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading...', 'christiaanconover' ) ); ?>
+		<?php the_content( __( 'Continue reading...', THEME_ID ) ); ?>
 	</div>
 	<footer>
 		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>

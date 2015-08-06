@@ -32,7 +32,7 @@ class Foundationpress_Offcanvas_Walker extends Walker_Nav_Menu {
 	}
 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "\n<ul class=\"left-submenu\">\n<li class=\"back\"><a href=\"#\">". __( 'Back', 'christiaanconover' ) ."</a></li>\n";
+		$output .= "\n<ul class=\"left-submenu\">\n<li class=\"back\"><a href=\"#\">". __( 'Back', THEME_ID ) ."</a></li>\n";
 	}
 
 }

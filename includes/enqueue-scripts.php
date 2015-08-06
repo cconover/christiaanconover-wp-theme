@@ -14,7 +14,7 @@ if ( ! function_exists( 'christiaanconover_scripts' ) ) :
 	function christiaanconover_scripts() {
 
 	// Enqueue the main Stylesheet.
-	wp_enqueue_style( 'christiaanconover', get_stylesheet_directory_uri() . '/css/christiaanconover.css' );
+	wp_enqueue_style( THEME_ID, get_stylesheet_directory_uri() . '/css/christiaanconover.css' );
 
 	// Deregister the jquery version bundled with WordPress.
 	wp_deregister_script( 'jquery' );
@@ -30,13 +30,13 @@ if ( ! function_exists( 'christiaanconover_scripts' ) ) :
 
 	// If you'd like to cherry-pick the foundation components you need in your project, head over to Gruntfile.js and see lines 67-88.
 	// It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
-	wp_register_script( 'christiaanconover', get_template_directory_uri() . '/js/christiaanconover.js', array('jquery'), '5.5.2', true );
+	wp_register_script( THEME_ID, get_template_directory_uri() . '/js/christiaanconover.js', array('jquery'), '5.5.2', true );
 
 	// Enqueue all registered scripts.
 	wp_enqueue_script( 'modernizr' );
 	wp_enqueue_script( 'fastclick' );
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'christiaanconover' );
+	wp_enqueue_script( THEME_ID );
 
 	}
 
