@@ -14,6 +14,9 @@
  * @since 1.0.0
  */
 
+/** Composer autoloader */
+require_once 'vendor/autoload.php';
+
 /** Bootstrap the theme environment */
 require_once 'includes/bootstrap.php';
 
