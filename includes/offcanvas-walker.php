@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage ChristiaanConover
- * @since ChristiaanConover 1.0
+ * @since 1.0.0
  */
 
 if ( ! class_exists( 'Foundationpress_Offcanvas_Walker' ) ) :

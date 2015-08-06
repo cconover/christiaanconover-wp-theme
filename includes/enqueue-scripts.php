@@ -7,7 +7,7 @@
  *
  * @package WordPress
  * @subpackage ChristiaanConover
- * @since ChristiaanConover 1.0
+ * @since 1.0.0
  */
 
 if ( ! function_exists( 'christiaanconover_scripts' ) ) :

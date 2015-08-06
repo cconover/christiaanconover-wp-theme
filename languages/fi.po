@@ -179,7 +179,7 @@ msgstr "Näyttää siltä että emme löydä etsimääsi. Kokeile hakutoimintoa.
 #. /archive/search.
 #. *
 #. * @subpackage ChristiaanConover
-#. * @since ChristiaanConover 1.0
+#. * @since 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."

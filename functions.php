@@ -11,7 +11,7 @@
  * hooks in WordPress to change core functionality.
  *
  * @link https://codex.wordpress.org/Theme_Development
- * @since ChristiaanConover 1.0
+ * @since 1.0.0
  */
 
 /** Various clean up functions */

@@ -5,7 +5,7 @@
  * @link http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
  * @package WordPress
  * @subpackage ChristiaanConover
- * @since ChristiaanConover 1.0
+ * @since 1.0.0
  */
 
 register_nav_menus(array(
