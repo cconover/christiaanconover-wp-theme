@@ -14,6 +14,9 @@
  * @since 1.0.0
  */
 
+/** Bootstrap the theme environment */
+require_once 'includes/bootstrap.php';
+
 /** Various clean up functions */
 require_once 'includes/cleanup.php';
 
