@@ -1,0 +1,26 @@
+/**
+ * Main SCSS file for the theme.
+ */
+@charset "UTF-8";
+
+// Normalize/reset
+@import "normalize";
+
+/* Mixins */
+@import "maps/mixins";
+
+/* Settings */
+// Foundation default settings
+@import "foundation/settings";
+
+// Theme settings
+@import "custom-settings";
+
+/* Components */
+@import "maps/components";
+
+/* Font Awesome */
+@import "fontawesome/font-awesome.scss";
+
+/* Theme styles */
+@import "maps/theme";
