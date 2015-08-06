@@ -6649,7 +6649,7 @@ th.hide-for-touch {
   .show-for-print {
     display: none !important; } }
 
-/* Font Awesome */
+/* Fonts */
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -8443,6 +8443,13 @@ th.hide-for-touch {
 
 .fa-medium:before {
   content: ""; }
+
+/**
+ * Support for the Melbourne font.
+ */
+@font-face {
+  font-family: "Melbourne";
+  src: url("../fonts/melbourne/melbourne.eot") format("eot"), url("../fonts/melbourne/melbourne.woff") format("woff"), url("../fonts/melbourne/melbourne.ttf") format("truetype"), url("../fonts/melbourne/melbourne.svg") format("svg"); }
 
 /* Theme styles */
 /* generated with grunt-sass-globbing */

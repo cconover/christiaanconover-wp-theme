@@ -41,7 +41,7 @@ module.exports = (grunt) ->
         expand: true
         cwd: 'bower_components/fontawesome/scss/'
         src: '**'
-        dest: 'src/scss/fontawesome/'
+        dest: 'src/scss/fonts/fontawesome/'
       foundationscripts:
         expand: true
         cwd: 'bower_components/foundation/js/vendor/'
@@ -89,7 +89,7 @@ module.exports = (grunt) ->
     'string-replace':
       fontawesome:
         files:
-          'src/scss/fontawesome/_variables.scss': 'src/scss/fontawesome/_variables.scss'
+          'src/scss/fonts/fontawesome/_variables.scss': 'src/scss/fonts/fontawesome/_variables.scss'
         options:
           replacements: [
             {

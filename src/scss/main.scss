@@ -19,8 +19,12 @@
 /* Components */
 @import "maps/components";
 
-/* Font Awesome */
-@import "fontawesome/font-awesome.scss";
+/* Fonts */
+// Font Awesome
+@import "fonts/fontawesome/font-awesome.scss";
+
+// Melbourne
+@import "fonts/melbourne";
 
 /* Theme styles */
 @import "maps/theme";
