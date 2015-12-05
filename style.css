@@ -9,3 +9,14 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: christiaanconover
 */
+
+
+/*-----------------------------------------------------------------------------
+ |
+ | This file should not contain any style rules. It should only contain the
+ | theme information required by WordPress.
+ |
+ | Stylesheets should be managed in their own files, and production assets
+ | generated through Gulp.
+ |
+ |---------------------------------------------------------------------------*/
